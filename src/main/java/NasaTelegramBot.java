@@ -24,7 +24,7 @@ public class NasaTelegramBot extends TelegramLongPollingBot {
         if (update.hasMessage()) {
             chat_id = update.getMessage().getChatId();
             switch (update.getMessage().getText()) {
-                case "/about":
+                case "/start":
                     sendMessage("Привет, я бот NASA! Я высылаю ссылки на картинки по запросу. " +
                             "Напоминаю, что картинки на сайте NASA обновляются раз в сутки.");
                     break;
