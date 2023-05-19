@@ -28,16 +28,9 @@ public class NasaTelegramBot extends TelegramLongPollingBot {
                     sendMessage("Привет, я бот NASA! Я высылаю ссылки на картинки по запросу. " +
                             "Напоминаю, что картинки на сайте NASA обновляются раз в сутки.");
                     break;
-                case "/getphoto":
+                case "/today":
                     try {
-                        sendMessage(Utils.getPhoto(URI));
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
-                    break;
-                case "/getdescription":
-                    try {
-                        sendMessage(Utils.getDescription(URI));
+                        sendMessage(Utils.getPhotoOfTheDay(URI));
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }

@@ -23,15 +23,11 @@ public class Utils {
         nasaObject = mapper.readValue(response.getEntity().getContent(), NasaObject.class);
     }
 
-    public static String getPhoto(String url) throws IOException {
+    public static String getPhotoOfTheDay(String url) throws IOException {
         connect(url);
-        return nasaObject.getUrl();
+
+        return nasaObject.getUrl() + "\n"
+                + nasaObject.getExplanation() + "\n"
+                + "© " + nasaObject.getCopyright();
     }
-
-    public static String getDescription(String url) throws IOException {
-        connect(url);
-        return nasaObject.getExplanation();
-    }
-
-
 }
